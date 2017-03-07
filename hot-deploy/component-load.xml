@@ -22,4 +22,5 @@ under the License.
         xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/component-loader.xsd">
     <load-component component-location="example"/>
     <load-component component-location="extcommon"/>
+    <load-component component-location="helloworld"/>
 </component-loader>
