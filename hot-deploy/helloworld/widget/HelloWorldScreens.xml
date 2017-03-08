@@ -17,12 +17,32 @@
     </screen>
 
     <screen name="user">
+    <section>
+        <actions>
+            <script location="component://helloworld/script/com/juweitu/helloworld/UserInfoActions.groovy#listUserInfo"  />
+        </actions>
+        <widgets>
+            <decorator-screen name="HelloWorldCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                <decorator-section name="body">
+                    <platform-specific>
+                        <html><html-template location="component://helloworld/webapp/helloworld/user.ftl"/></html>
+                    </platform-specific>
+                </decorator-section>
+            </decorator-screen>
+        </widgets>
+    </section>
+</screen>
+
+    <screen name="userUpdate">
         <section>
+            <actions>
+                <script location="component://helloworld/script/com/juweitu/helloworld/UserInfoActions.groovy#listUserInfo"  />
+            </actions>
             <widgets>
                 <decorator-screen name="HelloWorldCommonDecorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://helloworld/webapp/helloworld/user.ftl"/></html>
+                            <html><html-template location="component://helloworld/webapp/helloworld/userUpdate.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>

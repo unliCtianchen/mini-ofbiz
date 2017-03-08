@@ -10,15 +10,15 @@
     <version></version>
 
     <entity entity-name="BizUser" package-name="">
-        <field name="userId" type="int"/>
-        <field name="userName" type="String"/>
-        <field name="userPassword" type="String"/>
-        <field name="adr" type="String"/>
-        <field name="age" type="String"/>
-        <field name="sex" type="String"/>
-        <field name="IdCard" type="String"/>
+        <field name="userId" type="id"/>
+        <field name="userName" type="name"/>
+        <field name="userPassword" type="name"/>
+        <field name="adr" type="short-varchar"/>
+        <field name="age" type="name"/>
+        <field name="sex" type="name"/>
+        <field name="IdCard" type="id"/>
         <field name="createDate" type="date-time"/>
-        <prim-key field="uersId"/>
+        <prim-key field="userId"/>
     </entity>
 
 </entitymodel>

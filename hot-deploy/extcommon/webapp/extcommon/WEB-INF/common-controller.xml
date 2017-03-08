@@ -6,4 +6,16 @@
          elements found in the common-controller.xml file. -->
     <include location="component://common/webcommon/WEB-INF/common-controller.xml"/>
 
+    <request-map uri="jsonResponse">
+        <security direct-request="false"/>
+        <event type="groovy" path="component://example/script/org/miniofbiz/common/CommonEvents.groovy" invoke="jsonResponseFromRequestAttributes"/>
+        <response name="success" type="none"/>
+    </request-map>
+
+    <request-map uri="gridResponse">
+        <security direct-request="false"/>
+        <event type="groovy" path="component://example/script/org/miniofbiz/common/CommonEvents.groovy" invoke="gridResponseFromRequestAttributes"/>
+        <response name="success" type="none"/>
+    </request-map>
+
 </site-conf>

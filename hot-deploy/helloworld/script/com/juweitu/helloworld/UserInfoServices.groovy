@@ -26,3 +26,33 @@ public Map createUser() {
 
     return results
 }
+
+
+public Map updateUserT() {
+    LocalDispatcher dispatcher = dispatcher
+    Delegator delegator = delegator
+    Map parameters = parameters
+
+    def userId = parameters.userId
+    GenericValue user=delegator.findOne("BizUser",[userId:userId],false)
+    user.setNonPKFields(parameters)
+    user.store()
+    def results= ServiceUtil.returnSuccess()
+    results.userId=userId
+    return results
+}
+
+
+public Map deleteUserInfo(){
+    LocalDispatcher dispatcher = dispatcher
+    Delegator delegator = delegator
+    Map parameters = parameters
+
+    def userId = parameters.userId
+    GenericValue  user = delegator.findOne("BizUser",[userId:userId],false)
+    user.setNonPKFields(parameters)
+    user.remove()
+
+    def results = ServiceUtil.returnSuccess()
+    return results
+}

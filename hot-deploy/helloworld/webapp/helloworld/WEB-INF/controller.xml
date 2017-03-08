@@ -26,13 +26,34 @@
     <request-map uri="user"><security https="false" auth="false"/>
         <response name="success" type="view" value="user"/>
     </request-map>
+
     <request-map uri="saveUser">
         <security https="false" auth="false"/>
         <event type="groovy" path="component://helloworld/script/com/juweitu/helloworld/UserInfoEvents.groovy" invoke="saveUser" />
-        <response name="success" type="none" />
+        <response name="success" type="view" value="user"/>
     </request-map>
+
+    <request-map uri="deleteUser">
+        <security https="false" auth="false"/>
+        <event type="groovy" path="component://helloworld/script/com/juweitu/helloworld/UserInfoEvents.groovy" invoke="deleteUser" />
+        <response name="success" type="request" value="jsonResponse"/>
+    </request-map>
+
+
+    <request-map uri="userUpdate"><security https="false" auth="false"/>
+        <response name="success" type="view" value="userUpdate"/>
+    </request-map>
+
+
+    <request-map uri="querUserInfoL">
+        <security https="false" auth="false" />
+        <event type="groovy" path="component://helloworld/script/com/juweitu/helloworld/UserInfoEvents.groovy" invoke="quertUserInfolist" />
+        <response name="success" type="request" value="jsonResponse"/>
+    </request-map>
+
 
     <!-- View Mappings -->
     <view-map name="main" type="screen" page="component://helloworld/widget/HelloWorldScreens.xml#main"/>
     <view-map name="user" type="screen" page="component://helloworld/widget/HelloWorldScreens.xml#user"/>
+    <view-map name="userUpdate" type="screen" page="component://helloworld/widget/HelloWorldScreens.xml#userUpdate"/>
 </site-conf>
